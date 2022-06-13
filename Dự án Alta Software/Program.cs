@@ -1,5 +1,6 @@
 ﻿
 using Dự_án_Alta_Software.Data;
+using Dự_án_Alta_Software.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddSingleton<ITaiKhoanRepository,TaiKhoanRepository>();
+builder.Services.AddScoped<ITaiKhoanRepository,TaiKhoanImpcs>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddEndpointsApiExplorer();
