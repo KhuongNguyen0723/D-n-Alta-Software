@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Dự_án_Alta_Software.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -17,18 +17,18 @@ namespace Dự_án_Alta_Software.Controllers
         }
 
         [HttpGet]
-        [Route("api/[controller]")]
+        //[Route("api/[controller]")]
         public IActionResult GetTaiKhoan()
         {
             return Ok(taiKhoanRepository.GetTaiKhoans());
         }
 
-        [HttpGet]
-        [Route("api/[controller]")]
+        [HttpGet("{id}")]
+        //[Route("api/[controller]")]
         public IActionResult GetTaiKhoan(int id)
         {
             var taikhoan = taiKhoanRepository.GetTaiKhoan(id);
-            if(taikhoan != null)
+            if (taikhoan != null)
             {
                 return Ok(taikhoan);
             }
@@ -36,7 +36,7 @@ namespace Dự_án_Alta_Software.Controllers
         }
 
         [HttpPost]
-        [Route("api/[controller]")]
+        //[Route("api/[controller]")]
         public IActionResult GetTaiKhoan(TaiKhoan taiKhoan)
         {
             taiKhoanRepository.AddTaiKhoan(taiKhoan);
@@ -44,11 +44,11 @@ namespace Dự_án_Alta_Software.Controllers
         }
 
         [HttpDelete]
-        [Route("api/[controller]")]
+        //[Route("api/[controller]")]
         public IActionResult DeteleTaiKhoan(int id)
         {
             var taikhoan = taiKhoanRepository.GetTaiKhoan(id);
-            if(taikhoan != null)
+            if (taikhoan != null)
             {
                 taiKhoanRepository.DeleteTaiKhoan(taikhoan);
                 return Ok();
@@ -57,11 +57,11 @@ namespace Dự_án_Alta_Software.Controllers
         }
 
         [HttpPatch]
-        [Route("api/[controller]")]
-        public IActionResult EditTaiKhoan(int id,TaiKhoan taiKhoan)
+        //[Route("api/[controller]")]
+        public IActionResult EditTaiKhoan(int id, TaiKhoan taiKhoan)
         {
             var existingTaiKhoan = taiKhoanRepository.GetTaiKhoan(id);
-            if(existingTaiKhoan != null)
+            if (existingTaiKhoan != null)
             {
                 taiKhoan.id_taikhoan = existingTaiKhoan.id_taikhoan;
                 taiKhoanRepository.EditTaiKhoan(taiKhoan);

@@ -28,15 +28,14 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swager/v1/swagger.json", "Dự án Alta Software v1"); });
+    app.UseSwaggerUI(/*c => { c.SwaggerEndpoint("/swager/v1/swagger.json", "Dự án Alta Software v1"); }*/);
 }
-app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swager/v1/swagger.json", "Dự án Alta Software v1"); });
+//app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swager/v1/swagger.json", "Dự án Alta Software v1"); });
 
 app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 

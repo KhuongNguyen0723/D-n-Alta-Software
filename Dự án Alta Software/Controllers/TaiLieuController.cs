@@ -17,14 +17,14 @@ namespace Dự_án_Alta_Software.Controllers
         }
 
         [HttpGet]
-        [Route("api/[controller]")]
-        public IActionResult GetTaiLieu()
+        //[Route("api/[controller]")]
+       public IActionResult GetTaiLieu()
         {
             return Ok(tailieuRepository.GetTaiLieu());
         }
 
-        [HttpGet]
-        [Route("api/[controller]")]
+        [HttpGet("id")]
+        //[Route("api/[controller]")]
         public IActionResult GetTaiLieu(int id)
         {
             var tailieu = tailieuRepository.GetTaiLieu(id);
@@ -36,7 +36,7 @@ namespace Dự_án_Alta_Software.Controllers
         }
 
         [HttpPost]
-        [Route("api/[controller]")]
+        //[Route("api/[controller]")]
         public IActionResult GetTaiLieu(TaiLieu tailieu)
         {
             tailieuRepository.AddTaiLieu(tailieu);
@@ -44,20 +44,20 @@ namespace Dự_án_Alta_Software.Controllers
         }
 
         [HttpDelete]
-        [Route("api/[controller]")]
+        //[Route("api/[controller]")]
         public IActionResult DeteleTaiLieu(int id)
         {
-            var tailieu = tailieuRepository.GetTaiLieu(id);
+           var tailieu = tailieuRepository.GetTaiLieu(id);
             if (tailieu != null)
             {
                 tailieuRepository.DeleteTaiLieu(tailieu);
-                return Ok();
+               return Ok();
             }
             return NotFound($"Tài liệu không tìm thấy");
         }
 
         [HttpPatch]
-        [Route("api/[controller]")]
+        //[Route("api/[controller]")]
         public IActionResult EditTaiKhoan(int id, TaiLieu tailieu)
         {
             var existingTaiLieu = tailieuRepository.GetTaiLieu(id);
@@ -66,7 +66,7 @@ namespace Dự_án_Alta_Software.Controllers
                 tailieu.id_tailieu = existingTaiLieu.id_tailieu;
                 tailieuRepository.EditTaiLieu(tailieu);
             }
-            return Ok(tailieu);
+           return Ok(tailieu);
         }
     }
 }

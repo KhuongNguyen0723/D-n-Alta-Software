@@ -17,26 +17,26 @@ namespace Dự_án_Alta_Software.Controllers
         }
 
         [HttpGet]
-        [Route("api/[controller]")]
+        //[Route("api/[controller]")]
         public IActionResult GetPhanQuyen()
         {
             return Ok(phanquyenRepository.GetPhanQuyens());
         }
 
-        [HttpGet]
-        [Route("api/[controller]")]
+        [HttpGet("id")]
+        //[Route("api/[controller]")]
         public IActionResult GetPhanQuyen(int id)
         {
             var phanquyen = phanquyenRepository.GetPhanQuyen(id);
             if (phanquyen != null)
-            {
+          {
                 return Ok(phanquyen);
             }
             return NotFound();
         }
 
         [HttpPost]
-        [Route("api/[controller]")]
+        //[Route("api/[controller]")]
         public IActionResult GetPhanQuyen(PhanQuyen phanquyen)
         {
             phanquyenRepository.AddPhanQuyen(phanquyen);
@@ -44,7 +44,7 @@ namespace Dự_án_Alta_Software.Controllers
         }
 
         [HttpDelete]
-        [Route("api/[controller]")]
+        //[Route("api/[controller]")]
         public IActionResult DetelePhanQuyen(int id)
         {
             var phanquyen = phanquyenRepository.GetPhanQuyen(id);
@@ -52,20 +52,20 @@ namespace Dự_án_Alta_Software.Controllers
             {
                 phanquyenRepository.DeletePhanQuyen(phanquyen);
                 return Ok();
-            }
-            return NotFound();
+           }
+           return NotFound();
         }
 
         [HttpPatch]
-        [Route("api/[controller]")]
+        //[Route("api/[controller]")]
         public IActionResult EditPhanQuyen(int id, PhanQuyen phanquyen)
         {
             var existingPhanQuyen = phanquyenRepository.GetPhanQuyen(id);
-            if (existingPhanQuyen != null)
+           if (existingPhanQuyen != null)
             {
                 phanquyen.id_quyen = existingPhanQuyen.id_quyen;
                 phanquyenRepository.EditPhanQuyen(phanquyen);
-            }
+           }
             return Ok(phanquyen);
         }
     }
