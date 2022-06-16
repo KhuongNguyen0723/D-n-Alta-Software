@@ -9,9 +9,9 @@ namespace Dự_án_Alta_Software.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        private ITaiKhoanRepository taiKhoanRepository;
+        private ITaiKhoan taiKhoanRepository;
 
-        public AccountController(ITaiKhoanRepository taiKhoanRepository)
+        public AccountController(ITaiKhoan taiKhoanRepository)
         {
             this.taiKhoanRepository = taiKhoanRepository;
         }

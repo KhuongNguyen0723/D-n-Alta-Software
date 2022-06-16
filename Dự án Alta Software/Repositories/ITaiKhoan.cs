@@ -1,8 +1,7 @@
 ﻿using Dự_án_Alta_Software.Model;
-
 namespace Dự_án_Alta_Software.Repositories
 {
-    public interface ITaiKhoanRepository
+    public interface ITaiKhoan
     {
         List<TaiKhoan> GetTaiKhoans();
 

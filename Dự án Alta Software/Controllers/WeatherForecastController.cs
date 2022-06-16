@@ -18,6 +18,7 @@ namespace Dự_án_Alta_Software.Controllers
             _logger = logger;
         }
 
+
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {

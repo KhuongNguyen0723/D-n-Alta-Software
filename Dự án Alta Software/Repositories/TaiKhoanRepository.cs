@@ -2,8 +2,9 @@
 
 namespace Dự_án_Alta_Software.Repositories
 {
-    public class TaiKhoanRepository : ITaiKhoanRepository
+    public class TaiKhoanRepository : ITaiKhoan
     {
+
         private List<TaiKhoan> taikhoan = new List<TaiKhoan>()
         {
             new TaiKhoan()
