@@ -20,6 +20,9 @@ builder.Services.AddTransient<IPhanQuyen, PhanQuyenRepository>();
 builder.Services.AddTransient<IMonHoc, MonHocRepository>();
 builder.Services.AddTransient<ILoaiTaiLieucs, LoaiTaiLieuRepository>();
 builder.Services.AddTransient<IPhanCong, PhanCongRepository>();
+builder.Services.AddTransient<ILopHoc, LopHocRepository>();
+builder.Services.AddTransient<IKhoiLop, KhoiLopRepository>();
+builder.Services.AddTransient<IBaiKiemTra, BaiKiemTraRepository>();
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("AltaSoftware"));
