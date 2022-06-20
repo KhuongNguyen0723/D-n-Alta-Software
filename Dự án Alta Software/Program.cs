@@ -17,6 +17,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<ITaiKhoan, TaiKhoanRepository>();
 builder.Services.AddTransient<ITaiLieu, TaiLieuRepository>();
 builder.Services.AddTransient<IPhanQuyen, PhanQuyenRepository>();
+builder.Services.AddTransient<IMonHoc, MonHocRepository>();
+builder.Services.AddTransient<ILoaiTaiLieucs, LoaiTaiLieuRepository>();
+builder.Services.AddTransient<IPhanCong, PhanCongRepository>();
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("AltaSoftware"));
