@@ -22,6 +22,12 @@ builder.Services.AddTransient<ILoaiTaiLieucs, LoaiTaiLieuRepository>();
 builder.Services.AddTransient<IPhanCong, PhanCongRepository>();
 builder.Services.AddTransient<ILopHoc, LopHocRepository>();
 builder.Services.AddTransient<IKhoiLop, KhoiLopRepository>();
+builder.Services.AddTransient<IGiangVien, GiangVienRepository>();
+builder.Services.AddTransient<IHocSinh, HocSinhRepository>();
+builder.Services.AddTransient<IChiTietLopHoc, ChiTietLopHocRepository>();
+builder.Services.AddTransient<ILoaiBaiKiemTra, LoaiBaiKiemTraRepository>();
+builder.Services.AddTransient<IKhoaHoc, KhoaHocRepository>();
+builder.Services.AddTransient<IDiem, DiemRepository>();
 builder.Services.AddTransient<IBaiKiemTra, BaiKiemTraRepository>();
 builder.Services.AddDbContext<DataContext>(options =>
 {

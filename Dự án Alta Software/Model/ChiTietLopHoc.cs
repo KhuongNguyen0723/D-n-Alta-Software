@@ -8,7 +8,7 @@ namespace Dự_án_Alta_Software.Model
     [Keyless]
     public class ChiTietLopHoc
     {
-        
+        public int id { get; set; }
       public LopHoc LopHoc { get; set; }
         [Required,StringLength(50)]
         public string lopsapmo { get; set; }
